@@ -1,0 +1,20 @@
+{
+    "name": "sa/products",
+    "description": "Test task from the employer",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Alexey Shapilov",
+            "email": "shapilov@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "7.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    }
+}
