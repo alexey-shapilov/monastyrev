@@ -1,0 +1,24 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types = 1);
+
+use App\Parsing\GroupsParser;
+use App\Parsing\ProductsParser;
+use App\Render\HtmlRender;
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+$parseGroup = new GroupsParser(dirname(__DIR__) . '/data/group.csv');
+
+$groups = $parseGroup->parse();
+
+$parseProducts = new ProductsParser(dirname(__DIR__) . '/data/products.csv');
+
+$productsList = $parseProducts->parse();
+
+$render = new HtmlRender($groups, $productsList);
+
+$html = $render->render();
+
+echo $html . PHP_EOL;
